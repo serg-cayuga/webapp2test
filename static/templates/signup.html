@@ -1,0 +1,41 @@
+<h1 class="text-center">Sign Up</h1>
+
+<div class="col-md-8 col-md-offset-2" ng-show="signupData.error">
+    <div class="alert alert-warning">
+      <a class="close" ng-click="signupData.error='';">×</a>
+      {{ signupData.error }}
+    </div>
+</div>
+
+<form class="form-horizontal margin-top2" name="SignupForm">
+
+  <div class="form-group">
+    <label class="col-sm-offset-1 col-sm-3 control-label" for="id_full_name">Full name</label>
+    <div class="col-sm-5">
+      <input id="id_full_name" class="form-control" type="text" ng-model="signupData.fullName" required="" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-offset-1 col-sm-3 control-label" for="id_email">Email</label>
+    <div class="col-sm-5">
+      <input id="id_email" class="form-control" type="email" ng-model="signupData.email" required="" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-offset-1 col-sm-3 control-label" for="id_pwd">Password</label>
+    <div class="col-sm-5">
+      <input id="id_pwd" class="form-control" type="password" ng-model="signupData.password" required="" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-5">
+      <a class="btn btn-link pull-left col-xs-2" href="/#/login">Log in</a>
+      <button class="btn btn-success pull-right col-xs-2"
+              type="submit" ng-click="signup()" ng-disabled="SignupForm.$invalid">OK</button>
+    </div>
+  </div>
+
+</form>

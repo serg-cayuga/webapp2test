@@ -1,0 +1,34 @@
+<h1 class="text-center">Login</h1>
+
+<div class="col-md-8 col-md-offset-2" ng-show="loginData.error">
+    <div class="alert alert-warning">
+      <a class="close" ng-click="loginData.error='';">×</a>
+      {{ loginData.error }}
+    </div>
+</div>
+
+<form class="form-horizontal margin-top2" name="LoginForm">
+
+  <div class="form-group">
+    <label class="col-sm-offset-1 col-sm-3 control-label" for="id_email">Email</label>
+    <div class="col-sm-5">
+      <input id="id_email" class="form-control" type="email" ng-model="loginData.email" required="" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-offset-1 col-sm-3 control-label" for="id_pwd">Password</label>
+    <div class="col-sm-5">
+      <input id="id_pwd" class="form-control" type="password" ng-model="loginData.password" required="" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-5">
+      <a class="btn btn-link pull-left col-xs-2" href="/#/signup">Sign Up</a>
+      <button class="btn btn-success pull-right col-xs-2"
+              type="submit" ng-click="login()" ng-disabled="LoginForm.$invalid">Login</button>
+    </div>
+  </div>
+
+</form>
